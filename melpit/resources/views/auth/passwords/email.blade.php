@@ -1,6 +1,8 @@
+@extends('layouts.app_only_content')
+
 @section('title')
-パスワードリセットリクエスト
-@endsectio
+    パスワードリセットリクエスト
+@endsection
 
 @section('content')
 <div class='container'>
@@ -9,15 +11,14 @@
         <div class="font-weight-bold text-center border-bottom pb-3" style="font-size: 24px">パスワードをお忘れの方</div>
 
         <form method="POST" action="{{route('password.email')}}" class="p-5">
-            @if(session('status'))
+        @if(session('status'))
             <div class="alert alert-success" role="alert">
                 {{session('status')}}
-                <div class="alert alert-success" role="alert">
-                    {{session('status')}}
+               
                      </div>
                    @endif
 
-                   @call_user_func
+                  @csrf   
 
                    <div class="form-group">
                        <label for="email">メールアドレス</label>
