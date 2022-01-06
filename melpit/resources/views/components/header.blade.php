@@ -3,7 +3,7 @@
         <a class="navbar-brand" href="{{ url('/') }}">
             <img src="/images/logo-1.png" style="height: 39px;" alt="Melpit">
         </a>
-<!--     
+    
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 @guest
@@ -25,10 +25,16 @@
                                 <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 35px; height: 35px;">
                             @endif
                             {{ $user->name }} <span class="caret"></span>
-                        </a> -->
+                        </a> 
                   
-                        <!-- {{-- ドロップダウンメニュー --}}
+                         {{-- ドロップダウンメニュー --}}
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('sell') }}">
+                            <i class="fas fa-camera text-left" style="width: 30px"></i>商品を出品する
+                           </a>
+                           <a class="dropdown-item" href="{{ route('mypage.sold-items') }}">
+                            <i class="fas fa-store-alt text-left" style="width: 30px"></i>出品した商品
+                             </a>
                             <a class="dropdown-item" href="{{ route('mypage.edit-profile') }}">
                                 <i class="far fa-address-card text-left" style="width: 30px"></i>プロフィール編集
                             </a>
@@ -42,7 +48,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                        </div> -->
+                        </div>
                     </li>
                 @endguest
             </ul>

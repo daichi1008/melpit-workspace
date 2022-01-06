@@ -8,7 +8,7 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core'
  
  dom.watch();
 
-console.log("test")
+
 
  document.querySelector('.image-picker input')
      .addEventListener('change', (e) => {
